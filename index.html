@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WMM Distances</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			margin: 0 auto;
+			padding: 0;
+			max-width: 700px;
+		}
+
+		a {
+			color: darkblue;
+		}
+
+		a:hover {
+			text-decoration: dotted underline;
+		}
+
+		header, footer {
+			text-align: center;
+		}
+
+		b {
+			font-size: 2em;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>West Midlands Metro Distances</h1>
+		<p>
+			Source: <a href="https://www.whatdotheyknow.com/request/midland_metro_distances">Freedom of Information Request by Philip Hodgson</a>.
+		</p>
+		<p>26/Jul/2023</p>
+
+		<hr>
+	</header>
+
+	<main>
+		<noscript>
+			<p style="color: darkred; font-weight: bold;">
+				You need JavaScript enabled to use this page.
+			</p>
+		</noscript>
+
+		<p>
+			Get the the distance between:
+		</p>
+
+		<p>
+			<select id="js-from" onchange="calcDist()">
+				<option disabled selected>Loading</option>
+			</select>
+
+			and
+
+			<select id="js-to" onchange="calcDist()">
+				<option disabled selected>Loading</option>
+			</select>
+		</p>
+
+		<p id="js-out"></p>
+
+		<details>
+			<summary>Show Working</summary>
+			<pre id="js-debug"></pre>
+		</details>
+	</main>
+
+	<footer>
+		<hr>
+		<p>A thing by <a href="https://tomr.me">Tom</a></p>
+	</footer>
+	
+	<script src="distances.js"></script>
+</body>
+</html>
