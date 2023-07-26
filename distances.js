@@ -80,7 +80,7 @@ function calcDist() {
 
 
 	document.getElementById("js-out").innerHTML = `
-		<b>${km.toFixed(2)}km</b> (${miles} miles and ${chains} chains)
+		<b>${km.toFixed(2)}km</b> (${miles}&nbsp;miles&nbsp;and&nbsp;${chains}&nbsp;chains)
 	`
 }
 

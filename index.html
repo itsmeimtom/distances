@@ -9,8 +9,9 @@
 		body {
 			font-family: sans-serif;
 			margin: 0 auto;
-			padding: 0;
-			max-width: 700px;
+			padding: 0 1em;
+			max-width: 30em;
+			text-align: center;
 		}
 
 		a {
@@ -21,46 +22,71 @@
 			text-decoration: dotted underline;
 		}
 
-		header, footer {
-			text-align: center;
-		}
-
 		b {
 			font-size: 2em;
+		}
+
+		details {
+			cursor: pointer;
+		}
+
+		details, pre {
+			text-align: left;
+		}
+
+		@media (max-width: 30em) {
+			.no-mobile {
+				display: none;
+			}
+
+			select {
+				width: 100%;
+				padding: 16px 0;
+				margin: 16px 0;
+			}
+
+			#js-out {
+				font-size: 1.2em;
+			}
+
+			details {
+				margin: 16px 0;
+			}
+		}
+
+		@media (min-width: 30em) {
+			.mobile-only {
+				display: none;
+			}
 		}
 	</style>
 </head>
 <body>
 	<header>
 		<h1>West Midlands Metro Distances</h1>
-		<p>
-			Source: <a href="https://www.whatdotheyknow.com/request/midland_metro_distances">Freedom of Information Request by Philip Hodgson</a>.
-		</p>
 		<p>26/Jul/2023</p>
-
 		<hr>
 	</header>
 
 	<main>
 		<noscript>
 			<p style="color: darkred; font-weight: bold;">
-				You need JavaScript enabled to use this page.
+				You need JavaScript enabled to use this, sorry!
 			</p>
 		</noscript>
 
 		<p>
-			Get the the distance between:
-		</p>
+			<span class="mobile-only">Between</span>
 
-		<p>
 			<select id="js-from" onchange="calcDist()">
-				<option disabled selected>Loading</option>
+				<option disabled selected>Pls wait</option>
 			</select>
 
-			and
+			<span class="no-mobile">&ndash;</span>
+			<span class="mobile-only">and</span>
 
 			<select id="js-to" onchange="calcDist()">
-				<option disabled selected>Loading</option>
+				<option disabled selected>Pls wait</option>
 			</select>
 		</p>
 
@@ -75,6 +101,7 @@
 	<footer>
 		<hr>
 		<p>A thing by <a href="https://tomr.me">Tom</a></p>
+		<p style="font-size: 0.8em;">Data from Midland&nbsp;Metro&nbsp;Ltd, via an <a href="https://www.whatdotheyknow.com/request/midland_metro_distances">FoI Request by Philip&nbsp;Hodgson</a></p>
 	</footer>
 	
 	<script src="distances.js"></script>
